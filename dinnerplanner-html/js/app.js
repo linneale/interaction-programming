@@ -1,10 +1,14 @@
 $(function() {
 	//We instantiate our model
 	var model = new DinnerModel();
-	
-	// And create the instance of ExampleView
-	var exampleView = new ExampleView($("#exampleView"));
 
+	// And create the instance of ExampleView
+	var exampleView = new ExampleView($("#exampleView"), model);
+	var sidebarView = new SidebarView($("#sidebarView"), model);
+	//var topbarView = new topbarView($("#topbarView"), model);
+	var mainbarView = new MainbarView($("#mainbarView"), model);
+	var dishView = new DishView($("#dishView"), model);
+	var homeView = new HomeView($("homeView"), model);
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to
 	 * use the $('someSelector') to search for elements in the whole HTML.
